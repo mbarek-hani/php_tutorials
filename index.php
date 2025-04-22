@@ -1,21 +1,52 @@
 <?php
 
-// constants
+// data type & type casting
 
-define("STATUS_PAID", "paid");
+//bool true or false
+// $completed = true;
+//integer 1,2,3,4,-5,100,0...
+// $counter = 12;
+//float
+// $price = 9.99;
+//string
+// $name = "Mbarek";
 
-var_dump(STATUS_PAID, defined("STATUS_PAID"), defined("STATUS_PENDING"));
+// echo $completed . PHP_EOL;
+// echo $counter . PHP_EOL;
+// echo $price . PHP_EOL;
+// echo $name . PHP_EOL;
 
-const STATUS_PENDING = "pending";
+// echo "=======================================" . PHP_EOL;
 
-var_dump(STATUS_PENDING, defined("STATUS_PENDING"));
+// echo gettype($completed) . PHP_EOL;
+// echo gettype($counter) . PHP_EOL;
+// echo gettype($price) . PHP_EOL;
+// echo gettype($name) . PHP_EOL;
 
-// if(true) {
-//     define("STATUS_DECLINED", "declined"); GOOD
-// }else {
-//     const STATUS_APPROVED = "approved"; ERROR
-// }
+// echo "=======================================" . PHP_EOL;
 
-$foo = "bar";
-$$foo = "buz";
-echo $bar; // output buz
+// var_dump($completed);
+// var_dump($counter);
+// var_dump($price);
+// var_dump($name);
+
+declare(strict_types=1);
+
+echo "=======================================" . PHP_EOL;
+
+//array
+$items = [1, 2, "mbarek", 0, true, 9.15];
+echo "=======================================" . PHP_EOL;
+var_dump($items);
+echo "=======================================" . PHP_EOL;
+print_r($items);
+echo "=======================================" . PHP_EOL;
+
+function sum(int $x, int $y): int {
+    return $x + $y;
+}
+
+$result = sum(12, 10);
+// $result = sum('12', '20'); ERROR
+
+$num = (int)'12';
