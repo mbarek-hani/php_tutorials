@@ -1,24 +1,21 @@
 <?php
-    $x = "Hello, world!";
-    $y = &$x; // assignement by reference
-    $x = 15; // $y also changes
-?>
 
-<!DOCTYPE html>
-<html lang="en">
+// constants
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+define("STATUS_PAID", "paid");
 
-<body>
-    <?php
-        echo "<pre>";
-        var_dump($y); // outputs 15
-        echo "</pre>";
-    ?>
-</body>
+var_dump(STATUS_PAID, defined("STATUS_PAID"), defined("STATUS_PENDING"));
 
-</html>
+const STATUS_PENDING = "pending";
+
+var_dump(STATUS_PENDING, defined("STATUS_PENDING"));
+
+// if(true) {
+//     define("STATUS_DECLINED", "declined"); GOOD
+// }else {
+//     const STATUS_APPROVED = "approved"; ERROR
+// }
+
+$foo = "bar";
+$$foo = "buz";
+echo $bar; // output buz
